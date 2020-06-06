@@ -1,0 +1,37 @@
+{
+  "name": "brain-games",
+  "version": "0.0.1",
+  "bin": {
+    "brain-calc": "src/bin/brain-calc.js",
+    "brain-progression": "src/bin/brain-progression.js",
+    "brain-even": "src/bin/brain-even.js",
+    "brain-gcd": "src/bin/brain-gcd.js",
+    "brain-prime": "dist/bin/brain-prime.js"
+  },
+  "scripts": {
+    "eslint": "eslint src/*/*.js",
+    "brain-calc": "node src/bin/brain-calc.js",
+    "brain-progression": "node src/bin/brain-progression.js",
+    "brain-even": "node src/bin/brain-even.js",
+    "brain-gcd": "node src/bin/brain-gcd.js",
+    "brain-prime": "node dist/bin/brain-prime.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrmeison/brain-games.git"
+  },
+  "author": "meison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrmeison/brain-games/issues"
+  },
+  "homepage": "https://github.com/mrmeison/brain-games#readme",
+  "devDependencies": {
+    "eslint": "7.2.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-plugin-import": "2.20.2"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
