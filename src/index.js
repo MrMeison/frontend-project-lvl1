@@ -1,6 +1,6 @@
 const readlineSync = require('readline-sync');
 
-const STEP_COUNT = 3;
+const STEPS_COUNT = 3;
 
 module.exports = (getQuestion, description) => {
   console.log('Welcome to the Brain Games!');
@@ -10,7 +10,7 @@ module.exports = (getQuestion, description) => {
 
   console.log(`Hello, ${userName}!\n`);
 
-  const iter = (count = STEP_COUNT) => {
+  const iter = (count = STEPS_COUNT) => {
     const { question, correctAnswer } = getQuestion();
 
     if (count === 0) {
@@ -23,7 +23,8 @@ module.exports = (getQuestion, description) => {
       console.log('Correct!');
       return iter(count - 1);
     }
-    return console.log(`Wrong answer. \nLet's try again, ${userName}!`);
+
+    console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".\nLet's try again, ${userName}!`);
   };
 
   iter();

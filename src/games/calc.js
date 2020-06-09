@@ -1,18 +1,18 @@
 const { getRandomInt } = require('../utils');
-const game = require('..');
+const play = require('..');
 
 const DESCRIPTION = 'What is the result of the expression?';
 
-const Operators = {
+const operators = {
   '+': (a, b) => a + b,
   '-': (a, b) => a - b,
   '*': (a, b) => a * b,
-  '/': null,
+  '/': (a, b) => a / b,
 };
 
 
-const getQuestion = () => {
-  const availibleOperator = Object.keys(Operators);
+const getQuestionAndAnswer = () => {
+  const availibleOperator = Object.keys(operators);
   const operator = availibleOperator[getRandomInt(0, availibleOperator.length - 1)];
   const operand1 = getRandomInt(1, 100);
   const operand2 = getRandomInt(1, 100);
@@ -27,9 +27,9 @@ const getQuestion = () => {
 
   return {
     question: `${operand1} ${operator} ${operand2}`,
-    correctAnswer: Operators[operator](operand1, operand2).toString(),
+    correctAnswer: operators[operator](operand1, operand2).toString(),
   };
 };
 
 
-module.exports = () => game(getQuestion, DESCRIPTION);
+module.exports = () => play(getQuestionAndAnswer, DESCRIPTION);

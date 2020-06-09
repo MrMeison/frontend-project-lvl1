@@ -1,5 +1,5 @@
 const { getRandomInt } = require('../utils');
-const game = require('..');
+const play = require('..');
 
 const DESCRIPTION = 'Is this number prime?';
 
@@ -17,13 +17,13 @@ const prime = (num) => {
   return true;
 };
 
-const getQuestion = () => {
-  const question = getRandomInt(1, 100);
+const getQuestionAndAnswer = () => {
+  const number = getRandomInt(1, 100);
 
   return {
-    question,
-    correctAnswer: prime(question) ? 'yes' : 'no',
+    question: number.toString(),
+    correctAnswer: prime(number) ? 'yes' : 'no',
   };
 };
 
-module.exports = () => game(getQuestion, DESCRIPTION);
+module.exports = () => play(getQuestionAndAnswer, DESCRIPTION);

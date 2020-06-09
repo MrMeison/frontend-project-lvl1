@@ -1,5 +1,5 @@
 const { getRandomInt } = require('../utils');
-const game = require('..');
+const play = require('..');
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
@@ -16,7 +16,7 @@ const gcd = (number1, number2) => {
   return m;
 };
 
-const getQuestion = () => {
+const getQuestionAndAnswer = () => {
   const number1 = getRandomInt(1, 100);
   const number2 = getRandomInt(1, 100);
 
@@ -26,4 +26,4 @@ const getQuestion = () => {
   };
 };
 
-module.exports = () => game(getQuestion, DESCRIPTION);
+module.exports = () => play(getQuestionAndAnswer, DESCRIPTION);

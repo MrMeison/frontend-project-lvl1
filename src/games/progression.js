@@ -1,22 +1,21 @@
 const { getRandomInt } = require('../utils');
-const game = require('..');
+const play = require('..');
 
 const DESCRIPTION = 'What number is missing in this progression?';
 const PROGRESSION_LENGTH = 10;
+const MAX_STEP_DISTANCE = 10;
 
-const getProgression = () => {
-  const start = getRandomInt(1, 100);
-  const step = getRandomInt(1, PROGRESSION_LENGTH);
+const getProgression = (start, step) => {
   const res = [start];
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
     res.push(res[res.length - 1] + step);
   }
 
   return res;
 };
 
-const getQuestion = () => {
-  const progression = getProgression();
+const getQuestionAndAnswer = () => {
+  const progression = getProgression(getRandomInt(1, 100), getRandomInt(1, MAX_STEP_DISTANCE));
   const answerIndex = getRandomInt(0, progression.length - 1);
   const answer = progression[answerIndex];
   progression[answerIndex] = '..';
@@ -27,4 +26,4 @@ const getQuestion = () => {
   };
 };
 
-module.exports = () => game(getQuestion, DESCRIPTION);
+module.exports = () => play(getQuestionAndAnswer, DESCRIPTION);

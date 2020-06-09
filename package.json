@@ -10,11 +10,11 @@
   },
   "scripts": {
     "eslint": "eslint src/*/*.js",
-    "brain-calc": "node src/bin/brain-calc.js",
-    "brain-progression": "node src/bin/brain-progression.js",
-    "brain-even": "node src/bin/brain-even.js",
-    "brain-gcd": "node src/bin/brain-gcd.js",
-    "brain-prime": "node dist/bin/brain-prime.js"
+    "brain-calc": "node bin/brain-calc.js",
+    "brain-progression": "node bin/brain-progression.js",
+    "brain-even": "node bin/brain-even.js",
+    "brain-gcd": "node bin/brain-gcd.js",
+    "brain-prime": "node bin/brain-prime.js"
   },
   "repository": {
     "type": "git",
