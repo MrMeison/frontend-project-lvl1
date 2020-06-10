@@ -6,9 +6,9 @@ const PROGRESSION_LENGTH = 10;
 const MAX_STEP_DISTANCE = 10;
 
 const getProgression = (start, step) => {
-  const res = [start];
+  const res = [];
   for (let i = 0; i < PROGRESSION_LENGTH; i += 1) {
-    res.push(res[res.length - 1] + step);
+    res.push(start + step * i);
   }
 
   return res;

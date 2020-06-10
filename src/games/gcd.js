@@ -4,16 +4,11 @@ const play = require('..');
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (number1, number2) => {
-  let r = 0;
-  let n = number1;
-  let m = number2;
-
-  while (n !== 0) {
-    r = m % n;
-    m = n;
-    n = r;
+  if (number2 === 0) {
+    return number1;
   }
-  return m;
+
+  return gcd(number2, number1 % number2);
 };
 
 const getQuestionAndAnswer = () => {
